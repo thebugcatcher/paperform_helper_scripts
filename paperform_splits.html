@@ -1,0 +1,31 @@
+<!-- Add Bulma for Columns (best way is to add this to the theme, but adding it here
+     so it can be easily re-used) -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Create a div with the image you want to use as the split -->
+<div id="splitImageColumn" class="column is-half">
+    <img src="https://mytwofront.com/wp-content/themes/two-front/assets/images/patient/patient-2.svg" style="width: 100%">
+</div>
+
+<script>
+    // assign elements
+    const root = document.getElementsByClassName("DraftEditor-root")[0]
+    const editorContainer = document.getElementsByClassName("DraftEditor-editorContainer")[0]
+    const splitImageColumn = document.getElementById('splitImageColumn')
+    
+    // Add columns classes
+    root.classList.add('columns')
+    editorContainer.classList.add('column')
+    editorContainer.classList.add('is-half')
+    
+    // Add splitImageColumn to root
+    // Move this line before adding column and is-half classes to editorContainer to
+    // make this a left split
+    root.appendChild(splitImageColumn)
+</script>
+
+<style>
+    /* Disable scroll */
+    html, body {margin: 0; height: 100%; overflow: hidden}
+</style>
